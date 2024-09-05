@@ -36,3 +36,37 @@
     transform: rotate(360deg);
   }
 }
+
+/* src/styles/App.css */
+
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+}
+
+form {
+  margin: 20px 0;
+}
+
+input {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

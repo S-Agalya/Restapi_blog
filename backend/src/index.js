@@ -21,6 +21,8 @@ app.use('/api/auth',authRoutes)
 app.use('/api/posts', postRoutes);
 app.use('/api/comments', commentRoutes);
 
+
+
 //test route
 // app.get('/',(req,res)=>{
 //     res.send('welcome to the resftful api blog')
@@ -32,6 +34,12 @@ app.use('/api/comments', commentRoutes);
 // })
 
 const PORT = process.env.PORT
-app.listen(PORT,() =>{
+app.listen(PORT,async() =>{
     console.log(`Server running on port ${PORT}`)
+    try {
+        const result = await db.query('SELECT NOW()'); // Test query to check DB connection
+        console.log('DB connected at:', result.rows[0].now);
+      } catch (err) {
+        console.error('DB connection error:', err);
+      }
 })
