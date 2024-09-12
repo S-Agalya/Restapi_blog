@@ -1,27 +1,19 @@
-// src/pages/Home.js
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-// import React from 'react';
+const Home = () => {
+  const location = useLocation();
+  const { username } = location.state || {}; // Get username from location state
+  
+  return (
+    <div style={{ padding: '20px' }}>
+      <h1>Welcome {username ? username : 'Guest'}!</h1>
+      <p>This is the home page.</p>
+    </div>
+  );
+};
 
-// const Home = () => {
-//   const posts = [
-//     { id: 1, title: "First Post", content: "This is the first post." },
-//     { id: 2, title: "Second Post", content: "This is the second post." },
-//     { id: 3, title: "Third Post", content: "This is the third post." },
-//   ];
+export default Home;
 
-//   return (
-//     <div>
-//       <h2>Home</h2>
-//       <ul>
-//         {posts.map((post) => (
-//           <li key={post.id}>
-//             <h3>{post.title}</h3>
-//             <p>{post.content}</p>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// };
 
-// export default Home;
+

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import Login from './Login';
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
+  const [showLogin,setShowLogin]=useState(false)
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -21,6 +21,9 @@ const Register = () => {
       setError('Registration failed');
     }
   };
+  if(showLogin){
+    return <Login/>
+  }
 
   return (
     <div style={{ padding: '20px' }}>
@@ -55,7 +58,10 @@ const Register = () => {
         </div>
         <button type="submit">Register</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
+
+        
       </form>
+      <p>Already have an account?<button onClick={() => setShowLogin(true)}>register</button></p>
     </div>
   );
 };

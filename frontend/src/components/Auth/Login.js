@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Register from './Register';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showRegister, setShowRegister] = useState(false);
+  const navigate=useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -13,13 +17,18 @@ const Login = () => {
         email,
         password,
       });
-      // Handle successful login, e.g., store token, redirect user, etc.
-      console.log('Login successful:', response.data);
+      
+      const {username}= response.data
+      navigate('/home',{state:{username}})
+      //console.log('Login successful:', response.data);
     } catch (err) {
       setError('Invalid email or password');
     }
   };
 
+  if (showRegister) {
+    return <Register />;
+  }
   return (
     <div style={{ padding: '20px' }}>
       <h2>Login</h2>
@@ -44,7 +53,9 @@ const Login = () => {
         </div>
         <button type="submit">Login</button>
         {error && <p style={{ color: 'red' }}>{error}</p>}
+        
       </form>
+      <p>Dont have an account?<button onClick={() => setShowRegister(true)}>register</button></p>
     </div>
   );
 };
