@@ -1,0 +1,85 @@
+/* EditBlog.css */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f0f2f5, #d9e2ec); /* Light gradient background */
+}
+
+.edit-blog-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff; /* Clean white background for the form container */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0; /* Light gray border for subtle definition */
+}
+
+h2 {
+  color: #2c3e50; /* Dark slate gray for a professional look */
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333; /* Dark gray for label text */
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc; /* Light gray border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2); /* Blue shadow on focus */
+  outline: none;
+}
+
+.form-control-file {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  background: linear-gradient(145deg, #6dd5ed, #2193b0); /* Shiny gradient */
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  font-size: 16px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:hover {
+  background: linear-gradient(145deg, #5bacee, #1b7eb8); /* Darker gradient on hover */
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.text-danger {
+  color: #dc3545; /* Red color for error messages */
+}

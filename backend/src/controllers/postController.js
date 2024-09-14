@@ -1,15 +1,13 @@
 // logic for handling api requests
 //Handlers for post-related requests
 
-// src/controllers/postController.js
-
 const db = require('../config/db');
 
 // Create a new post
 exports.createPost = async (req, res) => {
   const { title, content, tags, category, featured_image } = req.body;
   const author_id = req.user.id;
-
+  
   try {
     const newPost = await db.query(
       'INSERT INTO posts (title, content, author_id, tags, category, featured_image) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
@@ -17,6 +15,7 @@ exports.createPost = async (req, res) => {
     );
     res.status(201).json(newPost.rows[0]);
   } catch (error) {
+    console.error('Error creating post:', error);
     res.status(500).json({ message: 'Server error' });
   }
 };

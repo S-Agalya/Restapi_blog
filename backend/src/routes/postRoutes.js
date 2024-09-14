@@ -28,4 +28,8 @@ router.put('/:id', authenticateToken, updatePost);
 // Delete a post (protected route)
 router.delete('/:id', authenticateToken, deletePost);
 
+// router.get('/test-auth', authenticateToken, (req, res) => {
+//   res.json({ message: 'Token is valid', user: req.user });
+// });
+
 module.exports = router;
